@@ -36,13 +36,47 @@ export default function Home() {
     <main className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-950 text-white">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center px-4 overflow-hidden">
-        {/* Decorative background orbs */}
+        {/* Decorative background elements */}
         <div className="pointer-events-none absolute inset-0 -z-10">
-          <div className="absolute -top-32 -right-10 h-72 w-72 rounded-full bg-[#EC9706]/20 blur-3xl" />
-          <div className="absolute bottom-0 left-0 h-72 w-72 rounded-full bg-purple-500/20 blur-3xl" />
+          {/* Grid pattern */}
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:50px_50px]" />
+          
+          {/* Animated gradient orbs */}
+          <div className="absolute -top-32 -right-10 h-72 w-72 rounded-full bg-[#EC9706]/20 blur-3xl animate-pulse" style={{animationDuration: '4s'}} />
+          <div className="absolute bottom-0 left-0 h-72 w-72 rounded-full bg-purple-500/20 blur-3xl animate-pulse" style={{animationDuration: '5s'}} />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-96 w-96 rounded-full bg-blue-500/10 blur-3xl animate-pulse" style={{animationDuration: '6s'}} />
+          
+          {/* Floating particles */}
+          <div className="absolute top-20 left-[20%] h-2 w-2 rounded-full bg-[#EC9706]/40 blur-sm" />
+          <div className="absolute top-40 right-[30%] h-1 w-1 rounded-full bg-purple-400/40 blur-sm" />
+          <div className="absolute bottom-32 left-[15%] h-1.5 w-1.5 rounded-full bg-blue-400/40 blur-sm" />
+          <div className="absolute top-60 right-[20%] h-2 w-2 rounded-full bg-pink-400/30 blur-sm" />
         </div>
 
         <div className="max-w-4xl mx-auto text-center space-y-8">
+          {/* Portrait */}
+          <div className="relative mx-auto flex items-center justify-center w-fit">
+            <div className="relative">
+              {/* Animated gradient border */}
+              <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-[#EC9706] via-purple-500 to-blue-500 opacity-75 blur-lg animate-pulse" style={{animationDuration: '3s'}} />
+              
+              {/* Portrait container */}
+              <div className="relative h-40 w-40 md:h-40 md:w-40 rounded-full overflow-hidden border-4 border-white/10 bg-gradient-to-br from-gray-800 to-gray-900">
+                <Image
+                  src="/projects/portrait.jpg"
+                  alt="Bear's Portrait"
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              </div>
+              
+              {/* Decorative dots */}
+              <div className="absolute -top-2 -right-2 h-4 w-4 rounded-full bg-[#EC9706] border-2 border-gray-900" />
+              <div className="absolute -bottom-2 -left-2 h-4 w-4 rounded-full bg-purple-500 border-2 border-gray-900" />
+            </div>
+          </div>
+
           <h1 className="text-5xl md:text-7xl font-bold leading-tight 
                          bg-[linear-gradient(135deg,#EC9706_10%,#FFA500_40%,#FF7EDB_70%)] 
                          bg-clip-text text-transparent">
@@ -82,8 +116,15 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 px-4">
-        <div className="max-w-5xl mx-auto grid md:grid-cols-[1.1fr,0.9fr] gap-10 items-center">
+      <section id="about" className="relative py-20 px-4 overflow-hidden">
+        {/* Background decorations */}
+        <div className="pointer-events-none absolute inset-0 -z-10">
+          <div className="absolute top-0 right-0 h-64 w-64 rounded-full bg-[#EC9706]/10 blur-3xl" />
+          <div className="absolute bottom-10 left-10 h-80 w-80 rounded-full bg-purple-500/10 blur-3xl" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(236,151,6,0.05),transparent_50%)]" />
+        </div>
+        
+        <div className="max-w-4xl mx-auto">
           <div>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">About Me</h2>
             <p className="text-gray-300 text-lg leading-relaxed mb-4">
@@ -114,32 +155,30 @@ export default function Home() {
               </div>
             </div>
           </div>
-
-          {/* <div className="relative mx-auto h-52 w-full max-w-sm rounded-2xl border border-white/10 bg-gradient-to-br from-[#EC9706]/20 via-gray-900 to-purple-600/20 p-[1px]">
-            <div className="h-full w-full rounded-2xl bg-gray-900/80 p-5 flex flex-col justify-between">
-              <div>
-                <p className="text-xs uppercase tracking-[0.2em] text-gray-400 mb-3">Profile</p>
-                <p className="text-lg font-semibold">DevOps / Cloud Enthusiast</p>
-                <p className="text-sm text-gray-300 mt-2">
-                  Building pipelines, containers, and systems that rarely wake you up at 3AM.
-                </p>
-              </div>
-              <div className="flex items-center justify-between text-xs text-gray-300 mt-4">
-                <span>Docker • CI/CD • Monitoring</span>
-                <span className="inline-flex items-center gap-1 rounded-full bg-[#EC9706]/10 px-3 py-1 text-[11px] text-[#EC9706]">
-                  <span className="h-1.5 w-1.5 rounded-full bg-[#EC9706]" />
-                  Available
-                </span>
-              </div>
-            </div>
-          </div> */}
         </div>
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 px-4 bg-gradient-to-b from-gray-900/60 to-gray-950">
+      <section id="projects" className="relative py-20 px-4 bg-gradient-to-b from-gray-900/60 to-gray-950 overflow-hidden">
+        {/* Background decorations */}
+        <div className="pointer-events-none absolute inset-0 -z-10">
+          {/* Diagonal lines pattern */}
+          <div className="absolute inset-0 opacity-[0.03]" style={{backgroundImage: 'repeating-linear-gradient(45deg, #fff 0, #fff 1px, transparent 0, transparent 50%)', backgroundSize: '10px 10px'}} />
+          
+          {/* Gradient orbs */}
+          <div className="absolute -top-20 -left-20 h-96 w-96 rounded-full bg-[#EC9706]/10 blur-3xl" />
+          <div className="absolute top-1/2 -right-32 h-[500px] w-[500px] rounded-full bg-purple-500/10 blur-3xl" />
+          <div className="absolute bottom-0 left-1/3 h-72 w-72 rounded-full bg-blue-500/10 blur-3xl" />
+          
+          {/* Radial gradient overlay */}
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(236,151,6,0.1),transparent_60%)]" />
+        </div>
+        
         <div className="max-w-6xl mx-auto">
-          {/* header area stays the same */}
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Featured Projects</h2>
+            <p className="text-gray-400 max-w-2xl mx-auto">A selection of projects showcasing my work in DevOps, security, and full-stack development</p>
+          </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project) => (
@@ -189,7 +228,14 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 px-4">
+      <section id="contact" className="relative py-20 px-4 overflow-hidden">
+        {/* Background decorations */}
+        <div className="pointer-events-none absolute inset-0 -z-10">
+          <div className="absolute top-10 left-1/4 h-64 w-64 rounded-full bg-[#EC9706]/15 blur-3xl animate-pulse" style={{animationDuration: '5s'}} />
+          <div className="absolute bottom-0 right-1/4 h-80 w-80 rounded-full bg-purple-500/15 blur-3xl animate-pulse" style={{animationDuration: '6s'}} />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(236,151,6,0.08),transparent_70%)]" />
+        </div>
+        
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
           <p className="text-gray-300 mb-6 text-lg">
