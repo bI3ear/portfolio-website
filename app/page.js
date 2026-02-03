@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import ResumeButton from './components/ResumeButton';
 
 const projects = [
   {
@@ -6,7 +7,7 @@ const projects = [
     title: "Python Source Code Vulnerability Scanner",
     image: "/projects/pythonvulner.jpg",
     description:
-      "Developed a security scanning tool focusing on DevSecOps practices and automated vulnerability detection.",
+      "Built an automated security scanner to detect code vulnerabilities, implementing DevSecOps best practices for safer development workflows.",
     stack: "Python • Regex • ReportLab • Security",
     link: "https://github.com/bI3ear/Source-Code-Vulnerability-Scanner" 
   },
@@ -15,8 +16,8 @@ const projects = [
     title: "Real Estate Marketplace Website with CI/CD Pipeline",
     image: "/projects/Realestate.jpg",
     description:
-      "Full-stack application dockerized and deployed via CI/CD pipelines on AWS EC2.",
-    stack: "NextJS • JavaScript • TailwindCSS • CI/CD",
+      "Full-stack application with automated CI/CD pipeline using GitHub Actions for streamlined deployment.",
+    stack: "NextJS • JavaScript • TailwindCSS • CI/CD • GitHub Actions",
     link: "https://github.com/bI3ear/real-estate-app"
   },
   {
@@ -24,7 +25,7 @@ const projects = [
     title: "Monitoring System for Web Applications",
     image: "/projects/monitor4.jpg",
     description:
-      "Implemented system monitoring and observability solutions to track application performance metrics.",
+      "Built a comprehensive monitoring system using Prometheus and Grafana to track application health and performance metrics.",
     stack: "NodeJS • Docker • Prometheus • Grafana • Kubernetes",
     link: "https://github.com/bI3ear/monitor-project-nodejs"
   }
@@ -47,12 +48,12 @@ export default function Home() {
                          bg-clip-text text-transparent">
             Hi, I'm Bear!
           </h1>
-          <p className="text-lg md:text-2xl text-gray-300 max-w-2xl mx-auto">
-            DevOps & Cloud-focused CS student crafting reliable, automated infrastructure with modern tooling.
+          <p className="text-lg md:text-3xl text-gray-300 max-w-2xl mx-auto">
+            DevOps & Cloud engineer in the making – automating infrastructure, ensuring reliability with modern cloud-native tools.
           </p>
 
           <div className="flex flex-wrap gap-3 justify-center text-sm text-gray-300">
-            {['Docker','Kubernetes','CI/CD','AWS / Cloud','Linux','Networking'].map((skill) => (
+            {['Docker','Kubernetes','CI/CD','Cloud','Linux','Networking'].map((skill) => (
               <span
                 key={skill}
                 className="rounded-full border border-white/10 bg-white/5 px-3 py-1"
@@ -75,12 +76,7 @@ export default function Home() {
             >
               Contact Me
             </a>
-            <a
-              href="#resume"
-              className="px-8 py-3 rounded-xl font-semibold border border-white/10 hover:border-[#EC9706] text-gray-200 hover:text-white transition"
-            >
-              Resume
-            </a>
+            <ResumeButton />
           </div>
         </div>
       </section>
@@ -91,13 +87,13 @@ export default function Home() {
           <div>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">About Me</h2>
             <p className="text-gray-300 text-lg leading-relaxed mb-4">
-              I'm a 3rd-year Computer Science student at Rangsit University, passionate about building
-              secure, scalable systems and automating everything from deployments to monitoring.
+              I am a Computer Science student at Rangsit University with a strong passion for DevOps, Cloud Engineering, and Site Reliability Engineering. My interest lies in building scalable, reliable systems and automating infrastructure to improve deployment efficiency and system monitoring.
             </p>
-            <p className="text-gray-300 leading-relaxed mb-6">
-              My focus areas include system automation, server management, cloud technologies,
-              CI/CD pipelines, and reliable infrastructure. I love turning complex infrastructure
-              problems into clean, repeatable workflows.
+            <p className="text-gray-300 text-lg leading-relaxed mb-4">
+              Through hands-on projects, I have developed a Source Code Vulnerability Scanner, built a Real Estate Application, and created a comprehensive monitoring system using Node.js. These experiences have strengthened my skills in security, full-stack development, and system observability.
+            </p>
+            <p className="text-gray-300 text-lg leading-relaxed mb-4">
+               I am eager to apply my technical skills and learn industry best practices in a dynamic internship environment, where I can contribute to infrastructure automation, cloud solutions, and ensuring system reliability at scale.
             </p>
             <div className="grid grid-cols-2 gap-4 text-sm">
               <div className="rounded-xl border border-white/10 bg-white/5 px-4 py-3">
