@@ -2,7 +2,7 @@
 
 import { useEffect, useId, useRef, useState } from 'react';
 
-const RESUME_PDF_URL = '/projects/Resume.pdf';
+const RESUME_PDF_URL = "/projects/thanapol's resume.pdf";
 
 function ResumeModal({ open, onClose }) {
   const titleId = useId();

@@ -8,6 +8,7 @@ const projects = [
     image: "/projects/pythonvulner.jpg",
     description:
       "Built an automated security scanner to detect code vulnerabilities, implementing DevSecOps best practices for safer development workflows.",
+    label: "DevOps",
     stack: "Python • Regex • ReportLab • Security",
     link: "https://github.com/bI3ear/Source-Code-Vulnerability-Scanner" 
   },
@@ -17,6 +18,7 @@ const projects = [
     image: "/projects/Realestate.jpg",
     description:
       "Full-stack application with automated CI/CD pipeline using GitHub Actions for streamlined deployment.",
+    label: "Full-Stack",
     stack: "NextJS • JavaScript • TailwindCSS • CI/CD • GitHub Actions",
     link: "https://github.com/bI3ear/real-estate-app"
   },
@@ -26,6 +28,7 @@ const projects = [
     image: "/projects/monitor4.jpg",
     description:
       "Built a comprehensive monitoring system using Prometheus and Grafana to track application health and performance metrics.",
+    label: "DevOps",
     stack: "NodeJS • Docker • Prometheus • Grafana • Kubernetes",
     link: "https://github.com/bI3ear/monitor-project-nodejs"
   }
@@ -199,8 +202,8 @@ export default function Home() {
                 <div className="flex flex-1 flex-col p-5">
                   <h3 className="text-lg font-semibold mb-2 flex items-center justify-between">
                     <span>{project.title}</span>
-                    <span className="rounded-full bg-[#EC9706]/10 px-2 py-0.5 text-[11px] font-medium text-[#EC9706]">
-                      DevOps
+                    <span className="rounded-full bg-[#EC9706]/10 px-2 py-0.5 text-[10px] font-medium text-[#EC9706] whitespace-nowrap">
+                      {project.label}
                     </span>
                   </h3>
                   <p className="text-sm text-gray-300 mb-4 flex-1">
