@@ -1,5 +1,29 @@
 import Image from 'next/image';
 import ResumeButton from './components/ResumeButton';
+import { FaFacebook, FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa6';
+
+const SOCIAL_LINKS = {
+  github: 'https://github.com/bI3ear',
+  facebook: 'https://facebook.com/',
+  instagram: 'https://instagram.com/',
+  linkedin: 'https://www.linkedin.com/',
+};
+
+function SocialIconLink({ href, label, Icon }) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noreferrer"
+      className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-white/20 bg-white/5 text-gray-200 transition hover:border-white/60 hover:bg-white/10 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#EC9706]/60"
+      aria-label={`Open ${label} in new tab`}
+      title={label}
+    >
+      <Icon className="h-5 w-5" aria-hidden="true" />
+      <span className="sr-only">{label}</span>
+    </a>
+  );
+}
 
 const projects = [
   {
@@ -83,7 +107,7 @@ export default function Home() {
           <h1 className="text-5xl md:text-7xl font-bold leading-tight 
                          bg-[linear-gradient(135deg,#EC9706_10%,#FFA500_40%,#FF7EDB_70%)] 
                          bg-clip-text text-transparent">
-            Hi, I'm Bear!
+            Hi, I&apos;m Bear!
           </h1>
           <p className="text-lg md:text-3xl text-gray-300 max-w-2xl mx-auto">
             DevOps & Cloud engineer in the making – automating infrastructure, ensuring reliability with modern cloud-native tools.
@@ -242,7 +266,7 @@ export default function Home() {
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
           <p className="text-gray-300 mb-6 text-lg">
-            I'm always open to new opportunities and collaborations
+            I&apos;m always open to new opportunities and collaborations
           </p>
           <p className="text-gray-400 mb-8 text-sm">
             Preferably related to DevOps, Cloud Infrastructure, Automation, Systems Engineer and Full-stack Engineer.
@@ -253,6 +277,13 @@ export default function Home() {
           >
             <span>Say hello</span>
           </a>
+
+          <div className="mt-6 flex flex-wrap justify-center gap-3">
+            <SocialIconLink href={SOCIAL_LINKS.github} label="GitHub" Icon={FaGithub} />
+            <SocialIconLink href={SOCIAL_LINKS.linkedin} label="LinkedIn" Icon={FaLinkedin} />
+            <SocialIconLink href={SOCIAL_LINKS.facebook} label="Facebook" Icon={FaFacebook} />
+            <SocialIconLink href={SOCIAL_LINKS.instagram} label="Instagram" Icon={FaInstagram} />
+          </div>
         </div>
       </section>
 
