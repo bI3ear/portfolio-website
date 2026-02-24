@@ -4,9 +4,9 @@ import { FaFacebook, FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa6';
 
 const SOCIAL_LINKS = {
   github: 'https://github.com/bI3ear',
-  facebook: 'https://facebook.com/',
-  instagram: 'https://instagram.com/',
-  linkedin: 'https://www.linkedin.com/',
+  facebook: 'https://www.facebook.com/phu.thanapol',
+  instagram: 'https://www.instagram.com/bxxr.mp/',
+  linkedin: 'https://www.linkedin.com/in/thanapol-unkamnerd-41b915375/'
 };
 
 function SocialIconLink({ href, label, Icon }) {
